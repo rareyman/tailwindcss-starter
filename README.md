@@ -7,10 +7,11 @@ To get started:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/rareyman/tailwind-starter-2020.git
+   git clone https://github.com/rareyman/tailwindcss-starter.git
 
-   cd tailwind-starter-2020
+   cd tailwindcss-starter
    ```
+(Optional: Rename project.)
 
 2. Install the dependencies:
 
