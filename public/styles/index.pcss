@@ -1,0 +1,120 @@
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@tailwind base;
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
+@tailwind components;
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins.
+ */
+@tailwind utilities;
+/**
+ * Use this directive to control where Tailwind injects the responsive
+ * variations of each utility.
+ *
+ * If omitted, Tailwind will append these classes to the very end of
+ * your stylesheet by default.
+ */
+/* @tailwind screens; */
+
+/**
+* Tailwind will automatically move any CSS within a @layer directive
+* to the same place as the corresponding tailwind rule, so you don’t
+* have to worry as much about authoring your CSS in a specific order
+* to avoid specificity issues.
+*/
+
+@layer base {
+	/* add base styles here */
+
+	/* fonts
+	============================================================================= */
+	/* https://web.dev/variable-fonts/ */
+	/* https://variablefonts.io/implementing-variable-fonts/#self-hosting */
+	/* https://cdn.samaritanspurse.org/ */
+	/* ========================================================================== */
+	/* Roboto Flex - Variable */
+	/* ========================================================================== */
+	@font-face {
+		font-display: swap;
+		font-family: 'Roboto Flex';
+		font-stretch: 25% 151%;
+		font-weight: 100 1000;
+		src: url('./fonts/Roboto-Flex.woff') format('woff2 supports variations'),
+			url('./fonts/Roboto-Flex.woff') format('woff2-variations');
+	}
+	/* ========================================================================== */
+	/* Inter - Variable */
+	/* ========================================================================== */
+	@font-face {
+		font-display: swap;
+		font-family: 'Inter';
+		/* font-stretch: 25% 151%; */
+		font-weight: 100 900;
+		src: url('./fonts/Inter.woff2') format('woff2 supports variations'),
+			url('./fonts/Inter.woff2') format('woff2-variations');
+	}
+
+	h1 {
+		padding: 0;
+		margin: 0;
+		letter-spacing: 10px;
+		small {
+			color: green !important;
+		}
+	}
+}
+
+@layer components {
+	/* add component styles here */
+	.btn {
+		@apply px-4 py-2 font-bold text-white rounded;
+	}
+
+	.btn.primary {
+		@apply bg-blue-500 hover:bg-blue-700;
+	}
+	.btn.success {
+		@apply bg-green-500 hover:bg-green-700;
+	}
+
+	/* toggle switch */
+	/* @apply: right-0 border-green-400; */
+	.toggle-checkbox:checked {
+		right: 0;
+		/* border-color: #68d391; */
+		border-color: rgba(31, 41, 55, 1);
+	}
+	/* @apply: bg-green-400; */
+	.toggle-checkbox:checked + .toggle-label {
+		/* background-color: #68d391; */
+		background-color: rgba(31, 41, 55, 1);
+	}
+}
+
+@layer utilities {
+	/* add utility styles here */
+}
+
+/**
+* The `@screen` directive allows you to create media queries that reference
+* your breakpoints by name instead of duplicating their values in your own CSS.
+*/
+
+@screen sm {
+	/* add sm variants here */
+}
+@screen md {
+	/* add md variants here */
+}
+@screen lg {
+	/* add lg variants here */
+}
+@screen xl {
+	/* add xl variants here */
+}
